@@ -40,6 +40,7 @@ class InputScannerTest {
         ByteArrayInputStream inputStream = new ByteArrayInputStream(text.getBytes());
         return new Scanner(inputStream);
     }
+
     @Test
     void givenCorrectYear_whenGettingInput_thenReturnYear() {
         Scanner scanner = getScannerWithInput(CORRECT_YEAR);
