@@ -9,10 +9,10 @@ This is an example project.
 
 ###### ENGLISH
 
-Users can enter a year number and the application will generate a csv-file containing dates that paychecks are meant
+Users can enter a year number and the application will generate a csv-file containing main.dates that paychecks are meant
 to be paid out on. The default payment date is on the 10th but if that day is a holiday, the payment is moved
 onto a workday. Reminder has to be sent out to an accountant at least 3 days before (workday principles
-apply here as well). Reminder dates are next to corresponding paycheck dates.
+apply here as well). Reminder main.dates are next to corresponding paycheck main.dates.
 
 ###### ESTONIAN
 

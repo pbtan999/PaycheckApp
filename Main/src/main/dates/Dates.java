@@ -1,4 +1,4 @@
-package dates;
+package main.dates;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -23,7 +23,7 @@ public final class Dates {
         List<LocalDate> paycheckDates = new LinkedList<>();
         for (int i = 1; i <= 12; i++) {
             LocalDate date = LocalDate.of(year, i, PAYCHECK_DAY);
-            while (isVacation(date)) {
+            while (isHoliday(date)) {
                 date = date.plusDays(1);
             }
             paycheckDates.add(date);
@@ -45,7 +45,7 @@ public final class Dates {
             int workingDays = 0;
             while (workingDays < 3) {
                 reminderDate = reminderDate.minusDays(1);
-                workingDays += (isVacation(reminderDate)) ? 0 : 1;
+                workingDays += (isHoliday(reminderDate)) ? 0 : 1;
             }
             reminderDates.add(reminderDate);
         }
@@ -57,7 +57,7 @@ public final class Dates {
      * @param date of paycheck or reminder
      * @return false if date is a workday, else true
      */
-    private static boolean isVacation(final LocalDate date) {
+    private static boolean isHoliday(final LocalDate date) {
         if (allHolidays == null) {
             allHolidays = getNationalHolidays(date.getYear());
         }
@@ -77,7 +77,6 @@ public final class Dates {
                 .collect(Collectors.toList());
         // Add moving holidays
         LocalDate easter = getEaster(year);
-        System.out.println(easter);
         allHolidays.add(easter.minusDays(2));  // Big friday
         allHolidays.add(easter);
         allHolidays.add(easter.plusDays(50));  // Pentecost

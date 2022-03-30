@@ -1,9 +1,13 @@
-package input;
+package main.input;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public final class InputScanner {
+    private static final int YEAR_FOUNDED = 1991;
+    private static final String OUTPUT_QUESTION = "Sisesta aasta, mille kohta soovid tabelit genereerida:";
+    private static final String OUTPUT_NOT_A_NUMBER = "Sisestada number!";
+    private static final String OUTPUT_INCORRECT_YEAR = "Ettevõte asutati 1991. aastal, sisesta hilisem aastaarv.";
 
     /**
      * Method for getting year number from user.
@@ -13,25 +17,23 @@ public final class InputScanner {
      *
      * @return entered year number as an int
      */
-    public static int getYearInput() {
-        final Scanner scanner = new Scanner(System.in);
+    public static int getYearInput(Scanner scanner) {
         Integer input = null;
         boolean valid = false;
         while (!valid) {
-                System.out.println("Sisesta aasta, mille kohta soovid tabelit genereerida:");
+                System.out.println(OUTPUT_QUESTION);
             try {
                 input = scanner.nextInt();
-                if (input >= 1991) {
+                if (input >= YEAR_FOUNDED) {
                     valid = true;
                 } else {
-                    System.out.println("Spin TEK asutati 1991. aastal, sisesta hilisem aastaarv");
+                    System.out.println(OUTPUT_INCORRECT_YEAR);
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Sisestada number!");
+                System.out.println(OUTPUT_NOT_A_NUMBER);
                 scanner.nextLine();  // Clear input stream
             }
         }
-        scanner.close();
         return input;
     }
 }
