@@ -15,5 +15,3 @@ apply here as well). Reminder main.dates are next to corresponding paycheck main
 Ülesandeks on kirjutada käsurearakendus (CLI rakendus), mille sisendiks on aastaarv ja väljundiks tabel,
 kus on valitud aasta iga kuu palgamaksmise kuupäev ja raamatupidajale meeldetuletuse saatmise kuupäev
 (kokku 12 rida ning tabeli päis). Rakendus peab väljundi kirjutama CSV-faili (näiteks "2022.csv").
-## Setup
-To run this project, install it locally using:
