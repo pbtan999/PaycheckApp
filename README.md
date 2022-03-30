@@ -1,9 +1,5 @@
 # PaycheckApp
 
-## Table of contents
-* [General info](#general-info)
-* [Setup](#setup)
-
 ## General info
 This is an example project.
 
@@ -21,7 +17,3 @@ kus on valitud aasta iga kuu palgamaksmise kuupäev ja raamatupidajale meeldetul
 (kokku 12 rida ning tabeli päis). Rakendus peab väljundi kirjutama CSV-faili (näiteks "2022.csv").
 ## Setup
 To run this project, install it locally using:
-
-```
-// TODO
-```
